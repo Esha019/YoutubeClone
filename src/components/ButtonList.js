@@ -1,21 +1,18 @@
 import React from 'react'
 import Button from './Button'
 
-const ButtonList = () => {
-	return (
-		<div className='flex'>
-			<Button name="All"/>
-			<Button name="Gaming"/>
-			<Button name="Songs"/>
-			<Button name="Live"/>
-			<Button name="Soccer"/>
-			<Button name="Cricket"/>
-			<Button name="Music"/>
-			<Button name="Cooking"/>
-			
+const list = ["All", "Live", "Gaming", "Music", "Cricket", "Comedy", "Cooking", "News", "Bollywood_Music", "Soccer", "Mixes", "Kapil_Sharma", "React", "Algorithms" , "Ponds", "Indian_cuisine", "Computer_Science"]
 
-		</div>
-	)
+const ButtonList = () => {
+  return (
+    <div className='flex flex-nowrap text-sm overflow-x-auto max-w-screen-xl mx-5 snap-x snap-mandatory scrollbar-hide'>
+      {list.map((list, index) => {
+          return (
+            <Button key={index} name={list} />
+          );
+        })}
+    </div>
+  )
 }
 
-export default ButtonList
+export default ButtonList;
